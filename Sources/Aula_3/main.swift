@@ -80,11 +80,11 @@ class Instrutor: User{
 
 var aluno = Aluno(nome: "Enzo", email:"email@email", plano: "Plano black")
 var instrutor = Instrutor(nome: "joao", email:"email@email", cref: "129837", especialidade:"musculacao")
-var Nutricionista = Nutricionista(nome: "Enzo", email:"email@email", crn: "121212", valorSessao: 150)
+//var Nutricionista = Nutricionista(nome: "Enzo", email:"email@email", crn: "121212", valorSessao: 150)
 //print(aluno.processarPagamento())
 //print(instrutor.getDescricao())
 
-let usuarios: [User] = [aluno, instrutor, nutricionista]
+let usuarios: [User] = [aluno, instrutor]
 
 for user in usuarios{
     print(user.processarPagamento())

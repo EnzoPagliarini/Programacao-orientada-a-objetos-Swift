@@ -27,6 +27,9 @@ let package = Package(
         .executableTarget(
             name: "Exercicio_1"
         ),
+        .executableTarget(
+            name: "Exercicio_2"
+        ),
     ]
 )
 
