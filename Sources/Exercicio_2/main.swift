@@ -4,13 +4,13 @@ import Foundation
 
 
 protocol VendavelOnline{
-    var preco: Double {get set}
+    var preco: Double {get}
     func adicionarAoCarrinho() -> String
 }
 
 
 protocol Enviavel{
-    var pesoEmGramas: Int {get set}
+    var pesoEmGramas: Int {get}
     func calcularCustoEnvio() -> Double
 }
 
