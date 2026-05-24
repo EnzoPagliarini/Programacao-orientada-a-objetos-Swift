@@ -25,7 +25,7 @@ let package = Package(
             name: "Aula_5"
         ),
         .executableTarget(
-            name: "Exercicios"
+            name: "Exercicio_1"
         ),
     ]
 )

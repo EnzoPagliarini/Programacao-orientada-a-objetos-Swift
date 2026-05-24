@@ -48,9 +48,3 @@ caminhao.acelerar()
 caminhao.acelerar()
 print("A velocidade atual é de \(caminhao.getVelocidade())")
 print(van.obterLocalizacao())
-
-
-
-
-
-
