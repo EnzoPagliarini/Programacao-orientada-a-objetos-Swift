@@ -42,6 +42,9 @@ let package = Package(
         .executableTarget(
             name: "Exercicio_6"
         ),
+        .executableTarget(
+            name: "Projeto"
+        ),
     ]
 )
 
