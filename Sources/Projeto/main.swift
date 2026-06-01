@@ -6,7 +6,6 @@ class Pessoa{
     fileprivate var telefone: String
     fileprivate var endereco: String
     fileprivate let cpf: String
-    //fileprivate let dataDeNascimento: Date
     fileprivate let sexo: String
     
     init(nome: String, email: String, telefone: String, endereco: String, cpf: String, sexo: String) {
@@ -15,7 +14,6 @@ class Pessoa{
         self.telefone = telefone
         self.endereco = endereco
         self.cpf = cpf
-//        self.dataDeNascimento = dataDeNascimento
         self.sexo = sexo
     }
     
@@ -39,7 +37,7 @@ enum CategoriasAulas{
 }
 
 enum Objetivo{
-    case perderBeso
+    case perderPeso
     case ganharMassa
     case altaPerformance
     case poliesportivo
@@ -76,9 +74,7 @@ class Aluno: Pessoa{
     public func getMatricula() -> Int{
         return matricula
     }
-//    public func getPlano() -> Bool{
-//        return
-//    }
+
  
     public func pagamento() -> String{
         return "O aluno \(self.nome) realizou o pagamento com sucesso"
@@ -189,10 +185,6 @@ class Aparelho: Manutencao{
         historico.append("Manutenção não realizada")
         return false
     }
-    
-//    public func getHistorico() -> [String]{
-//        return historico
-//    }
 }
 
 
@@ -360,35 +352,88 @@ class Academia{
     func totalDeInstrutores() -> Int {
         instutores.count
     }
+    
+    func totalDeAulas() -> Int{
+        aulas.count
+    }
 }
 
 
 //TESTES
 
-    var pessoa: Pessoa = Pessoa(nome: "Enzo", email: "Email@", telefone: "49928922", endereco: "Mackenzie", cpf: "44412309",  sexo: "Masculino")
-    
-    
-var instrutor: Instrutor = Instrutor(especialidade: "Agachamento", formcacao: "Educação Física", nome: "Juliana", email: "Emzil", telefone: "123123123", cpf: "01029831", endereco: "Meu coração", sexo: "Feminino", cref: "12341351")
-    
-    
-    var aluno: Aluno = Aluno(plano: Plano(nome: "Black", valorMensalidade: 300.0, incluiPersonal: true, limiteAulas: 30, duracaoPlano: .anual), biometria: "123441", objetivo: .ganharMassa, peso: 60.5, altura: 1.70, nome: "João", email: "Email", telefone: "12778653", cpf: "41241298", endereco: "mackenzie alphaville", nivel: .iniciante, sexo: "Masculino")
+var pessoa: Pessoa = Pessoa(nome: "Enzo", email: "Email@", telefone: "49928922", endereco: "Mackenzie", cpf: "44412309", sexo: "Masculino")
 
-var aluno1: Aluno = Aluno(plano: Plano(nome: "Black", valorMensalidade: 300.0, incluiPersonal: true, limiteAulas: 30, duracaoPlano: .anual), biometria: "123441", objetivo: .ganharMassa, peso: 60.5, altura: 1.70, nome: "João", email: "Email", telefone: "12778653", cpf: "41241298", endereco: "mackenzie alphaville", nivel: .iniciante, sexo: "Masculino")
-    
+var instrutor: Instrutor = Instrutor(especialidade: "Agachamento", formcacao: "Educação Física", nome: "Juliana", email: "Emzil", telefone: "123123123", cpf: "01029831", endereco: "Meu coração", sexo: "Feminino", cref: "12341351")
+
+var instrutor2: Instrutor = Instrutor(especialidade: "Spinning", formcacao: "Educação Física", nome: "Carlos", email: "carlos@gym.com", telefone: "99999999", cpf: "09876543", endereco: "SP", sexo: "Masculino", cref: "CREF-002")
+
+var aluno: Aluno = Aluno(plano: Plano(nome: "Black", valorMensalidade: 300.0, incluiPersonal: true, limiteAulas: 30, duracaoPlano: .anual), biometria: "123441", objetivo: .ganharMassa, peso: 60.5, altura: 1.70, nome: "João", email: "Email", telefone: "12778653", cpf: "41241298", endereco: "mackenzie alphaville", nivel: .iniciante, sexo: "Masculino")
+
+var aluno1: Aluno = Aluno(plano: Plano(nome: "Gold", valorMensalidade: 150.0, incluiPersonal: false, limiteAulas: 15, duracaoPlano: .trimestral), biometria: "222222", objetivo: .ganharMassa, peso: 65.0, altura: 1.65, nome: "Maria", email: "maria@m.com", telefone: "99887766", cpf: "55556666", endereco: "SP", nivel: .intermediario, sexo: "Feminino")
+
+var aluno2: Aluno = Aluno(plano: Plano(nome: "Básico", valorMensalidade: 80.0, incluiPersonal: false, limiteAulas: 8, duracaoPlano: .mensal), biometria: "333333", objetivo: .altaPerformance, peso: 80.0, altura: 1.80, nome: "Lucas", email: "lucas@m.com", telefone: "11223344", cpf: "77778888", endereco: "SP", nivel: .avancado, sexo: "Masculino")
+
+var aluno3: Aluno = Aluno(plano: Plano(nome: "Básico", valorMensalidade: 80.0, incluiPersonal: false, limiteAulas: 8, duracaoPlano: .mensal), biometria: "444444", objetivo: .poliesportivo, peso: 55.0, altura: 1.60, nome: "Ana", email: "ana@m.com", telefone: "55443322", cpf: "99990000", endereco: "SP", nivel: .iniciante, sexo: "Feminino")
+
 var academia = Academia(nome: "SmartFit", cnpj: "12412455", endereco: "Paulista", tamanho: 240.5, telefone: "52346601", urlSite: "www.smartfit.com", instutores: [:], alunos: [:], aulas: [:])
 
-
-//    print(pessoa.getDescricao())
-//    print(instrutor.getDescricao())
-    //print(aluno.getDescricao())
-
-
-academia.cadastrarInstrutor(instrutor: instrutor)
-academia.cadastrarAluno(aluno: aluno)
+print("=== CADASTROS ===")
+print(academia.cadastrarInstrutor(instrutor: instrutor))
+print(academia.cadastrarInstrutor(instrutor: instrutor2))
+print(academia.cadastrarAluno(aluno: aluno))
 print(academia.cadastrarAluno(aluno: aluno1))
-print(academia.totalDeAlunos())
-print(academia.totalDeInstrutores())
-print(aluno.getMatricula())
-print(academia.contemAluno(matricula: 3278))
-//academia.removerAluno(matricula: aluno.getMatricula())
-print(academia.totalDeAlunos())
+print(academia.cadastrarAluno(aluno: aluno2))
+print(academia.cadastrarAluno(aluno: aluno3))
+print("Total de alunos: \(academia.totalDeAlunos())")
+print("Total de instrutores: \(academia.totalDeInstrutores())")
+
+print("\n=== DUPLICAÇÃO ===")
+print(academia.cadastrarInstrutor(instrutor: instrutor))
+print(academia.cadastrarAluno(aluno: aluno))
+
+let turmaSpin = turmasColetivas(nome: "Spinning Matinal", categoria: .spinning, descricao: "Alta intensidade", instrutor: instrutor2, capacidade: 3)
+let treinoPersonal = treinosComPersonal(nome: "Hipertrofia", categoria: .musculacao, descricao: "Treino personalizado", instrutor: instrutor)
+
+print(academia.cadastrarAula(id: "SPIN-01", aula: turmaSpin))
+print(academia.cadastrarAula(id: "PERS-01", aula: treinoPersonal))
+
+print("\n=== SUPERLOTAÇÃO ===")
+print(turmaSpin.inscreverAluno(aluno: aluno))
+print(turmaSpin.inscreverAluno(aluno: aluno1))
+print(turmaSpin.inscreverAluno(aluno: aluno2))
+print(turmaSpin.inscreverAluno(aluno: aluno3))
+
+
+print("\n=== PERSONAL SEM PLANO ===")
+print(treinoPersonal.marcarTreino(aluno: aluno))
+print(treinoPersonal.marcarTreino(aluno: aluno1))
+print(treinoPersonal.marcarTreino(aluno: aluno2))
+print("\n=== EQUIPAMENTOS ===")
+let esteira   = Aparelho(nomeItem: "Esteira 01")
+let bicicleta = Aparelho(nomeItem: "Bicicleta Ergométrica 02")
+let halter    = Aparelho(nomeItem: "Halter 20kg")
+
+
+bicicleta.historico.append("Manutenção não realizada")
+
+
+print("\n=== Instrutor + Aluno como [Pessoa] ===")
+let pessoas: [Pessoa] = [instrutor, instrutor2, aluno, aluno1, aluno2, aluno3]
+for p in pessoas {
+    print("---")
+    print(p.getDescricao())
+}
+
+print("\n=== Aulas agrupadas pelo protocolo Aula ===")
+let todasAulas: [Aula] = [turmaSpin, treinoPersonal]
+for a in todasAulas {
+    print("--- \(a.nome) | categoria: \(a.categoria) | descrição: \(a.descricao)")
+}
+
+print("\n=== Totais ===")
+print("Total de alunos: \(academia.totalDeAlunos())")
+print("Total de instrutores: \(academia.totalDeInstrutores())")
+print("Total de aulas: \(academia.totalDeAulas())")
+
+
+
